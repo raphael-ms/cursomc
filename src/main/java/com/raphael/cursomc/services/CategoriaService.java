@@ -1,5 +1,7 @@
 package com.raphael.cursomc.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,14 @@ public class CategoriaService {
 		if(obj == null) {
 			throw new ObjectNotFoundExceptions("Objeto não encontrado! Id: " + id
 					+ " , Tipo: " + Categoria.class.getName());
+		}
+		return obj;
+	}
+	
+	public List<Categoria> findAll() {
+		List<Categoria> obj = repo.findAll();
+		if(obj == null) {
+			throw new ObjectNotFoundExceptions("Nenhum objeto inserido até o momento");
 		}
 		return obj;
 	}
