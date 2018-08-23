@@ -39,7 +39,6 @@ public class CategoriaResource {
 		Categoria obj = service.fromDTO(objDto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getId()).toUri();
-		
 		return ResponseEntity.created(uri).build();
 	}
 	
