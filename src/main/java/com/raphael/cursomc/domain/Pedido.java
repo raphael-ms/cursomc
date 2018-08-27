@@ -129,7 +129,13 @@ public class Pedido implements Serializable {
 		return true;
 	}
 
-	
+	public double getSomaTotal() {
+		double soma = 0.0;
+		for(ItemPedido ip : itens) {
+			soma = soma + ip.getSubTotal();
+		}
+		return soma;
+	}
 	
 
 }
